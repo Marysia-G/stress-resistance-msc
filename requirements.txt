@@ -1,0 +1,7 @@
+altair
+numpy
+pandas
+statsmodels
+openpyxl
+vl-convert-python
+
