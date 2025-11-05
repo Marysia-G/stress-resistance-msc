@@ -98,12 +98,19 @@ This script focuses on a single transcription factor and compares overexpression
 
 4. `04_ANOVA.ipynb`  
 **Performs statistical analysis.**  
-Runs ANOVA to determine which strain variants differ significantly from the control strain under specific conditions and timepoints. It outputs Excel files, where you can take a look what variants differ significantly, *(to be updated)* and it serves as the input for the fold change heatmaps in the next step.
+Runs ANOVA to determine which strain variants differ significantly from the control strain under specific conditions and timepoints. It outputs Excel files, where you can take a look what variants differ significantly.
 
-5. `05_fold_change_heatmap.ipynb`  
+5. `05_ANOVA_processing.ipynb`  
+**Extracts statistical significance with control strain.**  
+Extracts the relevant information from ANOVA and Tukey post-hoc results, concerning the significance of difference between modified TF and control strain. It alignes the statistical insights with the growth data to form a new statisctis data dataframe, to be used in the next step for preparing the fold change heatmaps.
+
+6. `06_fold_change_heatmap.ipynb`  
 **Generates heatmaps of fold changes.**  
-Creates heatmaps that visualize fold changes between each studied strain and the control. Each timepoint has its own heatmap. 
-*(to be updated)* Significant differences are annotated with fold change values, and boxes with statistically significant differences between modification types of a TF are highlighted with a black outline.
+Creates heatmaps that visualize fold changes (relative changes) between each studied strain and the control. Each timepoint has its own heatmap. Significant differences compared to control strain are annotated with fold change values.
+
+7. `07_dendrogram.ipynb`  
+**Generates clustered dendrograms.**  
+Creates plots of clustered dendrograms showing the "relationship" between each TF modified strain and conditions. It clusters the growth data based on their means, and the metric used to cluser is mean distance. It standardizes the growth results in each column (condition) so that the condition-specific growth differences doesn't disturb the analysis. There is one dendrogram generated per each timepoint.
 
 ---
 
