@@ -2,6 +2,8 @@ altair
 numpy
 pandas
 statsmodels
+seaborn
+matplotlib
 openpyxl
 vl-convert-python
 
